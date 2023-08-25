@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Software Requirements Specification - Exam Web App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navigation {
+            width: 200px;
+            background-color: #f4f4f4;
+            border-right: 2px solid #ccc;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .navigation a {
+            display: block;
+            margin: 10px 0;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .navigation a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navigation">
+        <a href="#intro">1. Introduction</a>
+        <a href="#scope">2. Product Scope</a>
+        <a href="#references">3. References</a>
+        <a href="#overall-description">4. Overall Description</a>
+        <a href="#user-interfaces">5. External Interface Requirements - User Interfaces</a>
+        <a href="#hardware-interfaces">5.1 Hardware Interfaces</a>
+        <a href="#software-interfaces">5.2 Software Interfaces</a>
+        <a href="#communications-interfaces">5.3 Communications Interfaces</a>
+        <a href="#system-features">6. System Features</a>
+        <a href="#cohort-management">6.1 Cohort and Assessment Management</a>
+        <a href="#question-types">6.2 Question Types and Evaluation</a>
+    </div>
+
+    <div class="content">
+        <h1>Software Requirements Specification (SRS) - Exam Web App</h1>
+
+        <h2 id="intro">1. Introduction</h2>
+        <h3>1.1 Purpose</h3>
+        <p>The purpose of this document is to specify the requirements for the development of an exam web app that allows
+            users to create cohorts, conduct assessments, and manage exam-related activities. This is a whole new system 
+            that is being created for taking exams with proper security. This is a new system that is not any patch for any other 
+            system. We will also create a mobile app for the convenience for the audience.</p>
+
+        <h3>1.2 Document Conventions</h3>
+        <p>[Describe any conventions followed in this document.]</p>
+
+        <h3>1.3 Intended Audience and Reading Suggestions</h3>
+        <p>This document is intended for developers, project managers, faculty members, students, testers, and documentation
+            writers. It is organized to provide an overview of the app's functionality, features, and user interactions.</p>
+
+        <h3>1.4 Product Scope</h3>
+        <p>This Exam Taking Web Application is a user-centric platform designed for taking the exams and assessment of the exams smoothly.
+           It allows students to take exams online, providing instant feedback and enabling remote participation. 
+           Teachers benefit from easy to create question papers functionality, automated grading, live feedback of the students while taking 
+           exams, and revise the grades later if needed. The application aligns with educational institutions' goals of efficiency, accessibility,
+           and academic excellence, offering a secure and 
+           innovative solution for modernizing the exam experience.</p>
+        <h3>1.5 References</h3>
+        <p> </p>    
+
+        <h2 id="overall-description">2. Overall Description</h2>
+        <h3>2.1 Product Perspective</h3>
+        <p>The Exam Taking Web Application is being developed as a standalone product, 
+            developed to make the exam taking procedure easy, secure and transparent. 
+            It is not part of an existing product family but serves as a self-contained solution 
+            to modernize and optimize the exam administration and assessment procedures.
+
+        <h3>2.2 Product Functions</h3>
+        <ul>
+            <li>User registration and sign-up through email.</li>
+            <li>Creation of cohorts for taking exams for a certain selected students.</li>
+            <li>Faculty-initiated invitation links for students to join cohorts.</li>
+            <li>Ability to add multiple-choice, text, and speech-based questions.</li>
+            <li>Question paper availability within specified time windows.</li>
+            <li>Automatic question paper expiration after a set duration.</li>
+            <li>Faculty-provided answer keys for assessment evaluation.</li>
+            <li>Automatic marking and calculation of student marks.</li>
+            <li>Display of marks to faculty and students.</li>
+            <li>Student dashboard for queries and mark-related complaints.</li>
+            <li>Image-based student verification using 3D images.</li>
+            <li>Microphone and video feedback while taking exams for the transparency of the exam.</li>
+            <li>Automatic reporting of any kind of cheating during the exam.</li>
+            <li>Students cannot change tab while taking exams due to security purpose.</li>
+        </ul>
+
+        <h3>2.3 User Classes and Characteristics</h3>
+        <ul>
+            <li>Faculty: Creates assessments, manages cohorts, and evaluates student answers, monitor exam sessions, provide answers, update marks.</li>
+            <li>Students: Participate in assessments, submit complaints, and view results.</li>
+        </ul>
+
+        <h3>2.4 Operating Environment</h3>
+        <p>The web app operates in modern web browsers and requires an internet connection. It should be accessible across
+            different devices. For mobile devices, there will be mobile application.
+            
+            <h4>Hardware Platform:</h4>
+            <p> Desktop and laptop computers need to have at least 4GB of RAM and a modern processor. And mobile devices(Android) need to have enough 
+            sufficient memory and a decent processor to run the mobile application.</p>
+            
+            <h4>Web Browsers:</h4>
+            <ul>
+                <li>Google Chrome(latest version)</li>
+                <li>Mozilla Firefox (latest version)</li>
+                <li>Microsoft Edge (latest version)</li>
+            </ul>
+            <h4>Software Dependencies:</h4>
+            <ul>
+                <li>Web Server: The application requires a web server, such as Apache or Nginx, to serve web pages and manage user requests.</li>
+                <li>Backend Framework: The application is built using a specific backend framework (e.g., Django, Ruby on Rails),
+                     which handles data processing, authentication, and interactions with the database.</li>
+                <li>Database Management System: The application uses a relational database management system (e.g., MySQL, PostgreSQL, Firebase) to store user data, 
+                    assessment details, and results.</li>
+                <li>Image Processing Libraries: To verify student identity, the application interfaces with image processing 
+                    libraries such as OpenCV.</li>
+                <li>External Libraries: There maybe many external libraries to make the functionality of the app smooth.</li>
+            </ul>
+            <h4>External Services</h4>
+            <p>Email Services: The application integrates with third-party email services (e.g., SendGrid, SMTP servers) to send invitation links and notifications to users.</p>
+
+
+        <h3>2.5 Design and Implementation Constraints</h3>
+        <ul>
+            <li>Use of secure authentication and authorization mechanisms.</li>
+            <li>Implementation adheres to privacy and data protection regulations.</li>
+            <li>Integration with camera and microphone for image verification.</li>
+        </ul>
+
+        <h3>2.6 User Documentation</h3>
+        <p>The app will provide user documentation including user guides, FAQs, and tutorials.</p>
+
+        <h3>2.7 Assumptions and Dependencies</h3>
+        <ul>
+            <li>Availability of stable internet connections.</li>
+            <li>Users have access to modern web browsers.</li>
+            <li>Image verification is feasible using 3D images.</li>
+        </ul>
+        <h2 id="overall-description">4. Overall Description</h2>
+        
+
+    </div>
+
+</body>
+
+</html>
